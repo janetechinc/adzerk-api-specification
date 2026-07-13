@@ -260,3 +260,7 @@ paths:
                 type: object
         200:
           description: Successfully deleted
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      $ref: './components/security-schemes.yaml#/components/securitySchemes/ApiKeyAuth'
