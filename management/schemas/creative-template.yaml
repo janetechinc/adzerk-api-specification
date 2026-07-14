@@ -67,11 +67,30 @@ schemas:
     type: object
     properties:
       Path:
-        type: object
+        description: >-
+          A single path element, or an ordered array of path elements
+          (strings and/or non-negative integers), identifying the field to
+          update. An empty array denotes the root of the Creative Template.
+        oneOf:
+          - type: string
+          - type: array
+            items:
+              oneOf:
+                - type: string
+                - type: integer
+                  format: int32
+                  minimum: 0
       Op:
         type: string
+        enum:
+          - Update
+          - Delete
+          - InsertAfter
+        default: Update
       Value:
-        type: object
+        description: >-
+          The value to apply. Required unless Op is "Delete". May be any
+          JSON type, depending on the field being updated.
 
   CreativeTemplateUpdate:
     type: object
