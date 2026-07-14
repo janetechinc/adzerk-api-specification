@@ -33,14 +33,20 @@ paths:
                 Distance:
                   type: number
                   format: float
+                  minimum: 0.01
+                  maximum: 500
                   nullable: true
                 Latitude:
                   type: number
                   format: float
+                  minimum: -90
+                  maximum: 90
                   nullable: true
                 Longitude:
                   type: number
                   format: float
+                  minimum: -180
+                  maximum: 180
                   nullable: true
                 StreetAddress:
                   type: string
@@ -107,12 +113,18 @@ paths:
                       Distance:
                         type: number
                         format: float
+                        minimum: 0.01
+                        maximum: 500
                       Latitude:
                         type: number
                         format: float
+                        minimum: -90
+                        maximum: 90
                       Longitude:
                         type: number
                         format: float
+                        minimum: -180
+                        maximum: 180
       responses:
         201:
           description: The newly uploaded Distance Target(s)
@@ -155,14 +167,20 @@ paths:
                 Distance:
                   type: number
                   format: float
+                  minimum: 0.01
+                  maximum: 500
                   nullable: true
                 Latitude:
                   type: number
                   format: float
+                  minimum: -90
+                  maximum: 90
                   nullable: true
                 Longitude:
                   type: number
                   format: float
+                  minimum: -180
+                  maximum: 180
                   nullable: true
                 StreetAddress:
                   type: string
