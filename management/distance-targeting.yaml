@@ -46,19 +46,7 @@ paths:
                   type: string
                   nullable: true
       responses:
-        400:
-          description: Bad Request Response
-          content:
-            application/json:
-              schema:
-                type: object
-        503:
-          description: Geocoding service unavailable
-          content:
-            application/json:
-              schema:
-                type: object
-        200:
+        201:
           description: The newly created Distance Target
           content:
             application/json:
@@ -124,7 +112,7 @@ paths:
                       type: number
                       format: float
       responses:
-        200:
+        201:
           description: The newly uploaded Distance Target(s)
           content:
             application/json:
@@ -178,18 +166,6 @@ paths:
                   type: string
                   nullable: true
       responses:
-        400:
-          description: Bad Request Response
-          content:
-            application/json:
-              schema:
-                type: object
-        503:
-          description: Geocoding service unavailable
-          content:
-            application/json:
-              schema:
-                type: object
         200:
           description: The updated Distance Target geometry
           content:
@@ -218,12 +194,6 @@ paths:
             type: integer
             format: int32
       responses:
-        400:
-          description: Bad Request Response
-          content:
-            application/json:
-              schema:
-                type: object
         200:
           description: The successful get Distance Target geometry
           content:
@@ -252,13 +222,7 @@ paths:
             type: integer
             format: int32
       responses:
-        400:
-          description: Bad Request Response
-          content:
-            application/json:
-              schema:
-                type: object
-        200:
+        204:
           description: Successfully deleted
 components:
   securitySchemes:
