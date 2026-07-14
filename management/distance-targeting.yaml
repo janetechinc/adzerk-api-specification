@@ -31,15 +31,15 @@ paths:
               type: object
               properties:
                 Distance:
-                  type: integer
+                  type: number
                   format: float
                   nullable: true
                 Latitude:
-                  type: integer
+                  type: number
                   format: float
                   nullable: true
                 Longitude:
-                  type: integer
+                  type: number
                   format: float
                   nullable: true
                 StreetAddress:
@@ -101,16 +101,18 @@ paths:
                   nullable: true
                 Geometries:
                   type: array
-                  items: 
-                    Distance:
-                      type: number
-                      format: float
-                    Latitude:
-                      type: number
-                      format: float
-                    Longitude:
-                      type: number
-                      format: float
+                  items:
+                    type: object
+                    properties:
+                      Distance:
+                        type: number
+                        format: float
+                      Latitude:
+                        type: number
+                        format: float
+                      Longitude:
+                        type: number
+                        format: float
       responses:
         201:
           description: The newly uploaded Distance Target(s)
@@ -151,15 +153,15 @@ paths:
               type: object
               properties:
                 Distance:
-                  type: integer
+                  type: number
                   format: float
                   nullable: true
                 Latitude:
-                  type: integer
+                  type: number
                   format: float
                   nullable: true
                 Longitude:
-                  type: integer
+                  type: number
                   format: float
                   nullable: true
                 StreetAddress:
