@@ -597,8 +597,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Event'
+        externalMetadata:
+          type: object
+          description: Custom metadata configured on the ad, only present if set.
+        adChain:
+          type: array
+          description: >-
+            When multiple ads are selected for a non-multi-winner placement,
+            the additional ads beyond the first are included here.
+          items:
+            $ref: '#/components/schemas/Decision'
+        ecpmPartition:
+          type: string
+          description: Only present if the matched impression has an ecpmPartition set.
         matchedPoints:
           type: array
+          description: Only present when the request sets includeMatchedPoints to true.
           items:
             $ref: '#/components/schemas/MatchedPoint'
         pricing:
@@ -634,6 +648,17 @@ components:
         clearPrice:
           type: number
           format: float
+        modifiedPrice:
+          type: number
+          format: float
+          description: Only present when a bid modifier applied to the impression.
+        optimizedPrice:
+          type: number
+          format: float
+          description: Only present when the flight has a targetROAS configured.
+        eventMultiplier:
+          type: number
+          format: float
         revenue:
           type: number
           format: float
@@ -649,8 +674,21 @@ components:
           $ref: '#/components/schemas/User'
         decisions:
           type: object
+          description: >-
+            Keyed by each placement's divName. The value is null if no ad
+            filled that placement, an array of Decision if the placement is a
+            multi-winner (count/skipSelection) placement, otherwise a single
+            Decision.
+          additionalProperties:
+            nullable: true
+            oneOf:
+              - $ref: '#/components/schemas/Decision'
+              - type: array
+                items:
+                  $ref: '#/components/schemas/Decision'
         explain:
           type: object
+          description: Only present when the request is in explain/diagnostic mode.
     ConsentRequest:
       type: object
       properties:
@@ -662,9 +700,11 @@ components:
       type: object
       properties:
         lat:
-          type: string
+          type: number
+          format: float
         lon:
-          type: string
+          type: number
+          format: float
     GeoDistanceSkipFilter:
       type: boolean
       description: Geodistance filter, which skips geodistance targeting if true.
