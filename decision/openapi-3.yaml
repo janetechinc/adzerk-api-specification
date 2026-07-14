@@ -589,6 +589,10 @@ components:
         impressionUrl:
           type: string
           format: uri
+        height:
+          type: integer
+        width:
+          type: integer
         events:
           type: array
           items:
