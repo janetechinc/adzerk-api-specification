@@ -681,11 +681,7 @@ components:
             Decision.
           additionalProperties:
             nullable: true
-            oneOf:
-              - $ref: '#/components/schemas/Decision'
-              - type: array
-                items:
-                  $ref: '#/components/schemas/Decision'
+            type: object
         explain:
           type: object
           description: Only present when the request is in explain/diagnostic mode.
