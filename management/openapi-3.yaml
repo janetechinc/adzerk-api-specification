@@ -1011,7 +1011,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
+              $ref: './schemas/creative-template.yaml#/schemas/CreativeTemplateUpdate'
       responses:
         200:
           description: The updated Creative Template
@@ -2633,9 +2633,6 @@ paths:
           description: Successfully Deleted
 
 components:
-  schemas:
-    CreativeTemplateUpdate:
-      $ref: './schemas/creative-template.yaml#/schemas/CreativeTemplateUpdate'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

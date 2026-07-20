@@ -182,4 +182,5 @@ paths:
           description: Successfully Deleted
 components:
   securitySchemes:
-    $ref: './components/security-schemes.yaml#/components/securitySchemes'
+    ApiKeyAuth:
+      $ref: './components/security-schemes.yaml#/components/securitySchemes/ApiKeyAuth'

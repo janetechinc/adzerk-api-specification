@@ -220,4 +220,5 @@ paths:
                 $ref: './schemas/campaign.yaml#/schemas/CampaignList'
 components:
   securitySchemes:
-    $ref: './components/security-schemes.yaml#/components/securitySchemes'
+    ApiKeyAuth:
+      $ref: './components/security-schemes.yaml#/components/securitySchemes/ApiKeyAuth'

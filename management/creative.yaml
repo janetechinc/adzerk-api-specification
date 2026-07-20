@@ -252,4 +252,5 @@ paths:
                 $ref: './schemas/creative.yaml#/schemas/CreativeList'
 components:
   securitySchemes:
-    $ref: './components/security-schemes.yaml#/components/securitySchemes'
+    ApiKeyAuth:
+      $ref: './components/security-schemes.yaml#/components/securitySchemes/ApiKeyAuth'
